@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container{
+  width: 340px;
+  text-align: center;
+}
+.progress-container{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  
+}
+.progress-container::before{
+  content: ' ';
+  background-color: rgb(179, 179, 179) ;
+  width: 99%;
+  height: 5px;
+  position: absolute;
+  top: 40%;
+  
+}
+
+.progress{
+  width: 0%;
+  background-color: royalblue;
+  height: 5px;
+  position: absolute;
+  top: 40%;
+  z-index: 0;
+  transition:  0.3s ease-in;
+
+}
+
+.circle{
+  border: rgb(179, 179, 179) solid 4px ;
+  border-radius: 50%;
+  padding: 6px 10px;
+  z-index: 10;
+  background-color: aliceblue;
+  transition: border 0.5s ease-in-out;
+}
+
+.btn{
+  padding: 10px;
+  border-radius: 10px;
+  background-color: royalblue;
+  color: aliceblue;
+  cursor: pointer;
+}
+.btn:disabled{
+background-color: rgb(179, 179, 179) ;
+opacity: 0.5;
+cursor: not-allowed;
+}
+
+.active{
+  border: royalblue solid 4px ;
+}
