@@ -97,3 +97,13 @@ nav i {
 .content img {
   width: 80%;
 }
+
+
+
+@media  (max-width:768px) {
+
+  .container{
+    padding:80px 10px 11px 12px;
+  }
+  
+}

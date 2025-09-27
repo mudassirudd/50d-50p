@@ -14,3 +14,16 @@ async function makeJoke() {
 
   jokeDiv.innerHTML = data.joke
 }
+
+// USING .then
+// function makeJoke() {
+//   fetch('https://icanhazdadjoke.com', {
+//     headers: {
+//       Accept: 'application/json',
+//     },
+//   })
+//     .then((res) => res.json())
+//     .then((data) => {
+//       jokeDiv.innerText = data.joke
+//     })
+// }

@@ -19,14 +19,14 @@ body {
 .container {
   background-color: aliceblue;
   border-radius: 20px;
-  width: 55%;
+  width: 50%;
   height: 50%;
   text-align: center;
 }
 
 h1 {
   text-align: center;
-  margin: 30px;
+  margin: 20px;
   color: gray;
   font-size: large;
 }
@@ -34,8 +34,8 @@ h1 {
 .joke {
   height: 50%;
   text-align: center;
-  font-size: xx-large;
-  margin: 50px 10px 0px 10px;
+  font-size: x-large;
+  margin: 40px 10px 0px 10px;
 }
 
 .jokeBtn {
@@ -50,4 +50,29 @@ h1 {
 }
 .jokeBtn:active {
   transform: scale(0.98);
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 60%;
+    height: 50%;
+  }
+
+  .joke {
+    height: 50%;
+    text-align: center;
+    font-size: large;
+    margin: 40px 10px 0px 10px;
+  }
+
+  .jokeBtn {
+    text-align: center;
+    background-color: deepskyblue;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px black;
+    color: aliceblue;
+    font-size: 10px;
+  }
 }
