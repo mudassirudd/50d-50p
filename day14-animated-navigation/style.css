@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eafbff;
+  background: linear-gradient(
+    180deg,
+    rgb(200, 217, 255) 50%,
+    rgb(99, 99, 255) 50%
+  );
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+nav {
+  background-color: aliceblue;
+  width: 80px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: width 0.6s linear;
+}
+
+nav ul {
+  width: 0;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: width 0.6s linear;
+}
+
+nav ul li {
+  opacity: 0;
+  transform: rotateY(0deg);
+  transition: all 0.6s linear;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: aliceblue;
+  outline: none;
+  border: none;
+}
+
+.line {
+  background-color: cornflowerblue;
+  height: 2px;
+  width: 20px;
+  position: absolute;
+  left: 5px;
+  transition: all 0.6s linear;
+}
+
+.line1 {
+  top: 10px;
+}
+.line2 {
+  bottom: 10px;
+}
+
+nav.active {
+  width: 350px;
+}
+
+nav.active ul {
+  width: 100%;
+}
+
+nav.active li {
+  opacity: 1;
+  transform: rotateY(360deg);
+  transition: all 0.6s linear;
+  margin: 0px 10px;
+}
+
+nav.active .line1 {
+  transform: rotate(765deg);
+  top: 15px;
+  transition: all 0.6s linear;
+}
+
+nav.active .line2 {
+  transform: rotate(-765deg);
+  top: 15px;
+
+  transition: all 0.6s linear;
+}
