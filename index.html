@@ -4,28 +4,333 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>50Days-50Projects</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #000000;
+        color: #e0e0e0;
+        min-height: 100vh;
+        padding: 3rem 1rem;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            ellipse at 20% 30%,
+            rgba(88, 28, 135, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 80% 70%,
+            rgba(29, 78, 216, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 50% 50%,
+            rgba(59, 130, 246, 0.08) 0%,
+            transparent 60%
+          );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #5b86e5 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 2px;
+        text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #888;
+        margin-bottom: 3rem;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem 0;
+      }
+
+      .project-card {
+        background: rgba(20, 20, 30, 0.6);
+        border: 2px solid rgba(102, 126, 234, 0.3);
+        border-radius: 12px;
+        padding: 0;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.1) 0%,
+          rgba(118, 75, 162, 0.1) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .project-card:hover::before {
+        opacity: 1;
+      }
+
+      .project-card:hover {
+        border-color: rgba(102, 126, 234, 0.8);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2),
+          0 0 40px rgba(118, 75, 162, 0.15),
+          inset 0 0 20px rgba(102, 126, 234, 0.05);
+      }
+
+      .project-card a {
+        display: block;
+        padding: 2rem 1.5rem;
+        text-decoration: none;
+        color: #e0e0e0;
+        font-size: 1.1rem;
+        font-weight: 500;
+        position: relative;
+        z-index: 1;
+        transition: color 0.3s ease;
+      }
+
+      .project-card:hover a {
+        color: #a78bfa;
+      }
+
+      .project-number {
+        display: inline-block;
+        background: rgba(102, 126, 234, 0.2);
+        border: 1px solid rgba(102, 126, 234, 0.4);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+        color: #a78bfa;
+        font-weight: 600;
+      }
+
+      .project-name {
+        display: block;
+        font-size: 1.2rem;
+        letter-spacing: 0.5px;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+
+        body {
+          padding: 2rem 1rem;
+        }
+      }
+
+      /* Subtle animation */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .project-card:nth-child(odd) {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .project-card:nth-child(even) {
+        animation: float 6s ease-in-out infinite 3s;
+      }
+    </style>
   </head>
   <body>
-    <div><a href="./day1-cards/">Expanding Cards</a></div>
-    <div><a href="./day2-progress-steps/">Progress Steps</a></div>
-    <div><a href="./day3-rotating-nav/">Rotating Navigation</a></div>
-    <div><a href="./day4-hidden-search/">Hidden Search</a></div>
-    <div><a href="./day5-blurry-loading/">Blurry Loading</a></div>
-    <div><a href="./day6-scroll-animation/">Scrolling Animation</a></div>
-    <div><a href="./day7-split-landing-page/">Split Landing Page</a></div>
-    <div><a href="./day8-form-input-wave/">Form Input Wave</a></div>
-    <div><a href="./day9-sound-board/">Sound Board</a></div>
-    <div><a href="./day10-dad-jokes/">Dad Jokes</a></div>
-    <div><a href="./day11-event-keycodes/">Event KeyCodes</a></div>
-    <div><a href="./day12-faq-collapse/">FAQ</a></div>
-    <div><a href="./day13-random-choice-picker/">Random Choice Picker</a></div>
-    <div><a href="./day14-animated-navigation/">Animated Navigation</a></div>
-    <div><a href="./day15-increment-counter/">Increment Counter</a></div>
-    <div><a href="./day16-drink-water/">Drink Water</a></div>
-    <div><a href="./day42-live-user-filter/">Live User Filter</a></div>
-    <div><a href="./day43-feedback-ui/">Feedback UI</a></div>
-    <div>
-      <a href="./day47-testimonial-box-switcher/">Testimonial Box Switcher</a>
+    <div class="container">
+      <h1>50 Days 50 Projects</h1>
+      <p class="subtitle">A Journey Through Creative Development</p>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <a href="./day1-cards/">
+            <span class="project-number">Day 01</span>
+            <span class="project-name">Expanding Cards</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day2-progress-steps/">
+            <span class="project-number">Day 02</span>
+            <span class="project-name">Progress Steps</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day3-rotating-nav/">
+            <span class="project-number">Day 03</span>
+            <span class="project-name">Rotating Navigation</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day4-hidden-search/">
+            <span class="project-number">Day 04</span>
+            <span class="project-name">Hidden Search</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day5-blurry-loading/">
+            <span class="project-number">Day 05</span>
+            <span class="project-name">Blurry Loading</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day6-scroll-animation/">
+            <span class="project-number">Day 06</span>
+            <span class="project-name">Scrolling Animation</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day7-split-landing-page/">
+            <span class="project-number">Day 07</span>
+            <span class="project-name">Split Landing Page</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day8-form-input-wave/">
+            <span class="project-number">Day 08</span>
+            <span class="project-name">Form Input Wave</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day9-sound-board/">
+            <span class="project-number">Day 09</span>
+            <span class="project-name">Sound Board</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day10-dad-jokes/">
+            <span class="project-number">Day 10</span>
+            <span class="project-name">Dad Jokes</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day11-event-keycodes/">
+            <span class="project-number">Day 11</span>
+            <span class="project-name">Event KeyCodes</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day12-faq-collapse/">
+            <span class="project-number">Day 12</span>
+            <span class="project-name">FAQ</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day13-random-choice-picker/">
+            <span class="project-number">Day 13</span>
+            <span class="project-name">Random Choice Picker</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day14-animated-navigation/">
+            <span class="project-number">Day 14</span>
+            <span class="project-name">Animated Navigation</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day15-increment-counter/">
+            <span class="project-number">Day 15</span>
+            <span class="project-name">Increment Counter</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day16-drink-water/">
+            <span class="project-number">Day 16</span>
+            <span class="project-name">Drink Water</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day42-live-user-filter/">
+            <span class="project-number">Day 42</span>
+            <span class="project-name">Live User Filter</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day43-feedback-ui/">
+            <span class="project-number">Day 43</span>
+            <span class="project-name">Feedback UI</span>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="./day47-testimonial-box-switcher/">
+            <span class="project-number">Day 47</span>
+            <span class="project-name">Testimonial Box Switcher</span>
+          </a>
+        </div>
+      </div>
     </div>
   </body>
 </html>
